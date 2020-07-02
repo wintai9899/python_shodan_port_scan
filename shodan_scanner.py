@@ -62,20 +62,17 @@ class Shodan_Finder():
                 asn_list.append(asn)
 
             '整合成一个字典'
-            print(module_list)
-
+            
             for m,pd,v,t in zip(module_list,product_list,version_list,transport_list):
                 ports_info = {'service':m, 'product':pd,'version':v,'protocol':t,}
                 ports = dict.fromkeys(port_list, ports_info)
 
 
             results['ports'] = ports
-            #pprint.pprint(results)
+            pprint.pprint(results)
         except Exception as e:
 
             print('Error:{}'.format(e))
-
-
 
 if __name__ == ('__main__'):
     result = Shodan_Finder()
