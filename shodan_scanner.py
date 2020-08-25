@@ -73,7 +73,8 @@ class Shodan_Finder():
         except Exception as e:
 
             print('Error:{}'.format(e))
+            result['ports'] = ''
 
 if __name__ == ('__main__'):
     result = Shodan_Finder()
-    result.search_for_ports('YOUR_API_KEY', '121.14.49.216')
+    result.search_for_ports('YOUR_API_KEY', '121.14.49.216')   #你的shodan API key还有想要查询的IP地址
